@@ -49,7 +49,7 @@ pipeline {
                 dir('frontend'){
                 sh '''
                     echo "Checking build folder..."
-                    ls -la build || (echo "build folder not found!" && exit 1)
+                    ls -la frontend/build || ls -la frontend/dist ||  (echo "build folder not found!" && exit 1)
                 '''
             }
         }

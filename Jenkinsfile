@@ -58,7 +58,7 @@ pipeline {
             steps {
                 withAWS(credentials: 'shana-cred', region: "${AWS_REGION}") {
                     sh '''
-                        aws s3 sync frontend/build/ s3://${S3_BUCKET}/ --delete
+                        aws s3 sync frontend/dist/ s3://${S3_BUCKET}/ --delete
                     '''
                 }
             }
